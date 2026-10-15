@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Brute-Force Protector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Login Brute-Force Protector</h1>
+
+    <p class="subtitle">
+        DFA-Based Authentication System
+    </p>
+
+    <form method="POST" action="/">
+        <label for="username">Username</label>
+        <input
+            type="text"
+            id="username"
+            name="username"
+            autocomplete="username"
+            required
+        >
+
+        <label for="password">Password</label>
+        <input
+            type="password"
+            id="password"
+            name="password"
+            autocomplete="current-password"
+            required
+        >
+
+        <button type="submit">Login</button>
+    </form>
+
+    <div class="state">
+        <h2>Current DFA State</h2>
+
+        <p class="state-value">{{ state }}</p>
+
+        <p class="message">{{ message }}</p>
+    </div>
+
+    <form method="POST" action="/reset">
+        <button type="submit" class="reset">Reset DFA</button>
+    </form>
+
+</div>
+
+</body>
+</html>
