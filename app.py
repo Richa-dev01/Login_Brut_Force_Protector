@@ -47,7 +47,7 @@ def login():
     )
 
 
-@app.route("/reset")
+@app.route("/reset", methods=["POST"])
 def reset():
 
     dfa.reset()
