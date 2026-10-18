@@ -1,102 +1,300 @@
 
+:root {
+    color-scheme: light;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #17233b;
+    background: #eef3fb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
+    min-height: 100vh;
     margin: 0;
-    padding: 20px;
+    padding: 32px 20px;
+    background:
+        radial-gradient(circle at 15% 10%, rgba(114, 150, 255, 0.28), transparent 28%),
+        radial-gradient(circle at 90% 90%, rgba(50, 205, 178, 0.17), transparent 25%),
+        #eef3fb;
 }
 
 .container {
-    width: 400px;
-    max-width: 100%;
-    margin: 60px auto;
-    padding: 30px;
-    background: white;
-    border-radius: 10px;
-    text-align: center;
-    box-sizing: border-box;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 460px;
+    margin: 5vh auto;
+    padding: 38px;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    box-shadow: 0 24px 60px rgba(33, 55, 99, 0.14);
+}
+
+.hero {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.brand-mark {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    color: #fff;
+    background: linear-gradient(145deg, #4f72ef, #2744b5);
+    border-radius: 15px;
+    box-shadow: 0 9px 18px rgba(56, 82, 206, 0.28);
+    font-size: 24px;
+}
+
+.eyebrow,
+.section-label {
+    margin: 0 0 5px;
+    color: #6880b5;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+h1,
+h2,
+p {
+    margin-top: 0;
 }
 
 h1 {
-    margin-bottom: 5px;
-    font-size: 26px;
+    margin-bottom: 0;
+    color: #152344;
+    font-size: 29px;
+    letter-spacing: -0.04em;
 }
 
 .subtitle {
-    color: gray;
-    margin-bottom: 25px;
+    margin: 23px 0 30px;
+    color: #73809a;
+    font-size: 14px;
+}
+
+.field {
+    margin-bottom: 18px;
 }
 
 label {
     display: block;
-    text-align: left;
-    margin-top: 15px;
+    margin-bottom: 8px;
+    color: #33415e;
+    font-size: 13px;
+    font-weight: 700;
 }
 
 input {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 14px 15px;
+    color: #17233b;
+    background: #f7f9fd;
+    border: 1px solid #dce3f0;
+    border-radius: 11px;
+    outline: none;
+    font: inherit;
+    transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+input::placeholder {
+    color: #a5afc1;
+}
+
+input:focus {
+    background: #fff;
+    border-color: #5c78e8;
+    box-shadow: 0 0 0 4px rgba(92, 120, 232, 0.14);
+}
+
+input:disabled {
+    cursor: not-allowed;
+    color: #929db0;
+    background: #edf0f6;
+    border-color: #e0e5ee;
 }
 
 button {
+    display: flex;
     width: 100%;
-    padding: 12px;
-    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 18px;
+    margin-top: 25px;
     cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background: #2563eb;
-    color: white;
-    font-size: 15px;
+    color: #fff;
+    background: linear-gradient(100deg, #526fe4, #3c59c8);
+    border: 0;
+    border-radius: 11px;
+    box-shadow: 0 10px 18px rgba(65, 89, 198, 0.22);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
 }
 
 button:hover {
-    background: #1d4ed8;
+    filter: brightness(1.06);
+    box-shadow: 0 13px 22px rgba(65, 89, 198, 0.3);
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled,
+button:disabled:hover {
+    cursor: not-allowed;
+    color: #9aa6bb;
+    background: #dfe4ed;
+    box-shadow: none;
+    filter: none;
+    transform: none;
+}
+
+.login-locked .locked-form {
+    position: relative;
+    cursor: not-allowed;
+}
+
+.login-locked .locked-form::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max-content;
+    max-width: 90%;
+    padding: 9px 12px;
+    content: "Account locked - reset the DFA to try again";
+    color: #fff;
+    background: #273653;
+    border-radius: 8px;
+    box-shadow: 0 8px 18px rgba(33, 50, 84, 0.2);
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: opacity 160ms ease;
+    z-index: 1;
+}
+
+.login-locked .locked-form:hover::after,
+.login-locked .locked-form:focus-within::after {
+    opacity: 1;
+}
+
+.button-arrow {
+    font-size: 20px;
+    line-height: 12px;
 }
 
 .state {
-    margin-top: 25px;
-    padding: 15px;
-    background: #eee;
-    border-radius: 5px;
+    padding: 20px;
+    margin-top: 28px;
     overflow-wrap: anywhere;
+    background: #f4f7fd;
+    border: 1px solid #e4eaf5;
+    border-radius: 15px;
+}
+
+.state-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 .state h2 {
-    font-size: 18px;
+    margin-bottom: 14px;
+    color: #263653;
+    font-size: 15px;
+}
+
+.state-dot {
+    width: 9px;
+    height: 9px;
+    margin-top: 4px;
+    background: #5c78e8;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px rgba(92, 120, 232, 0.12);
+}
+
+.state-success .state-dot {
+    background: #18a97f;
+    box-shadow: 0 0 0 5px rgba(24, 169, 127, 0.13);
+}
+
+.state-locked .state-dot {
+    background: #e35b65;
+    box-shadow: 0 0 0 5px rgba(227, 91, 101, 0.13);
 }
 
 .state-value {
-    font-size: 24px;
-    font-weight: bold;
+    margin-bottom: 7px;
+    color: #3d5ed0;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
+.state-success .state-value {
+    color: #148b6b;
+}
+
+.state-locked .state-value {
+    color: #d44f5a;
 }
 
 .message {
-    overflow-wrap: anywhere;
+    margin-bottom: 0;
+    color: #77839a;
+    font-size: 13px;
+    line-height: 1.5;
 }
 
 .reset {
-    background: #ddd;
-    color: #222;
-    margin-top: 10px;
+    margin-top: 12px;
+    color: #50617f;
+    background: transparent;
+    border: 1px solid #dbe3f0;
+    box-shadow: none;
 }
 
 .reset:hover {
-    background: #c5c5c5;
+    color: #33415e;
+    background: #f5f7fb;
+    box-shadow: none;
+}
+
+.footer-note {
+    margin: 22px 0 0;
+    color: #9aa6bb;
+    font-size: 11px;
+    text-align: center;
+}
+
+.footer-note span {
+    color: #30b18c;
+    font-size: 9px;
 }
 
 @media (max-width: 480px) {
+    body {
+        padding: 18px 14px;
+    }
+
     .container {
-        margin: 20px auto;
-        padding: 20px;
+        margin: 2vh auto;
+        padding: 28px 22px;
+        border-radius: 19px;
     }
 
     h1 {
-        font-size: 22px;
+        font-size: 25px;
     }
 }

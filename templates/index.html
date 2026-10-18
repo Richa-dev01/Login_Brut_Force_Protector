@@ -10,45 +10,72 @@
 
 <div class="container">
 
-    <h1>Login Brute-Force Protector</h1>
+    <header class="hero">
+        <div class="brand-mark" aria-hidden="true">盾</div>
+        <div>
+            <p class="eyebrow">SECURITY CONTROL</p>
+            <h1>Login Protector</h1>
+        </div>
+    </header>
 
     <p class="subtitle">
-        DFA-Based Authentication System
+        DFA-based authentication for safer sign-ins
     </p>
 
-    <form method="POST" action="/">
-        <label for="username">Username</label>
-        <input
-            type="text"
-            id="username"
-            name="username"
-            autocomplete="username"
-            required
-        >
+    <form method="POST" action="/" class="{% if state == 'LOCKED' %}login-locked{% endif %}">
+        <div class="locked-form" {% if state == "LOCKED" %}title="Account locked. Reset the DFA to try again."{% endif %}>
+        <div class="field">
+            <label for="username">Username</label>
+            <input
+                type="text"
+                id="username"
+                name="username"
+                autocomplete="username"
+                placeholder="Enter your username"
+                {% if state == "LOCKED" %}disabled{% endif %}
+                required
+            >
+        </div>
 
-        <label for="password">Password</label>
-        <input
-            type="password"
-            id="password"
-            name="password"
-            autocomplete="current-password"
-            required
-        >
+        <div class="field">
+            <label for="password">Password</label>
+            <input
+                type="password"
+                id="password"
+                name="password"
+                autocomplete="current-password"
+                placeholder="Enter your password"
+                {% if state == "LOCKED" %}disabled{% endif %}
+                required
+            >
+        </div>
+        </div>
 
-        <button type="submit">Login</button>
+        <button type="submit" {% if state == "LOCKED" %}disabled{% endif %}>
+            <span>Authenticate</span>
+            <span class="button-arrow" aria-hidden="true">→</span>
+        </button>
     </form>
 
-    <div class="state">
-        <h2>Current DFA State</h2>
+    <section class="state state-{{ state|lower }}" aria-live="polite">
+        <div class="state-heading">
+            <div>
+                <p class="section-label">LIVE MONITOR</p>
+                <h2>Current DFA state</h2>
+            </div>
+            <span class="state-dot" aria-hidden="true"></span>
+        </div>
 
         <p class="state-value">{{ state }}</p>
 
-        <p class="message">{{ message }}</p>
-    </div>
+        <p class="message">{{ message or "Ready to verify your credentials." }}</p>
+    </section>
 
     <form method="POST" action="/reset">
         <button type="submit" class="reset">Reset DFA</button>
     </form>
+
+    <p class="footer-note"><span aria-hidden="true">●</span> Protected by finite-state validation</p>
 
 </div>
 
