@@ -2,8 +2,8 @@
 :root {
     color-scheme: light;
     font-family: "Segoe UI", Arial, sans-serif;
-    color: #17233b;
-    background: #eef3fb;
+    color: #172b22;
+    background: #f0f4f0;
 }
 
 * {
@@ -15,9 +15,9 @@ body {
     margin: 0;
     padding: 32px 20px;
     background:
-        radial-gradient(circle at 15% 10%, rgba(114, 150, 255, 0.28), transparent 28%),
-        radial-gradient(circle at 90% 90%, rgba(50, 205, 178, 0.17), transparent 25%),
-        #eef3fb;
+        radial-gradient(circle at 15% 10%, rgba(95, 139, 107, 0.20), transparent 28%),
+        radial-gradient(circle at 90% 90%, rgba(50, 150, 110, 0.12), transparent 25%),
+        #f0f4f0;
 }
 
 .container {
@@ -28,7 +28,7 @@ body {
     background: rgba(255, 255, 255, 0.94);
     border: 1px solid rgba(255, 255, 255, 0.9);
     border-radius: 24px;
-    box-shadow: 0 24px 60px rgba(33, 55, 99, 0.14);
+    box-shadow: 0 24px 60px rgba(36, 67, 47, 0.12);
 }
 
 .hero {
@@ -43,16 +43,16 @@ body {
     height: 48px;
     place-items: center;
     color: #fff;
-    background: linear-gradient(145deg, #4f72ef, #2744b5);
+    background: linear-gradient(145deg, #557b61, #294b36);
     border-radius: 15px;
-    box-shadow: 0 9px 18px rgba(56, 82, 206, 0.28);
+    box-shadow: 0 9px 18px rgba(41, 75, 54, 0.22);
     font-size: 24px;
 }
 
 .eyebrow,
 .section-label {
     margin: 0 0 5px;
-    color: #6880b5;
+    color: #688371;
     font-size: 10px;
     font-weight: 800;
     letter-spacing: 0.16em;
@@ -66,14 +66,14 @@ p {
 
 h1 {
     margin-bottom: 0;
-    color: #152344;
+    color: #20372a;
     font-size: 29px;
     letter-spacing: -0.04em;
 }
 
 .subtitle {
     margin: 23px 0 30px;
-    color: #73809a;
+    color: #748579;
     font-size: 14px;
 }
 
@@ -84,7 +84,7 @@ h1 {
 label {
     display: block;
     margin-bottom: 8px;
-    color: #33415e;
+    color: #354b3d;
     font-size: 13px;
     font-weight: 700;
 }
@@ -92,9 +92,9 @@ label {
 input {
     width: 100%;
     padding: 14px 15px;
-    color: #17233b;
-    background: #f7f9fd;
-    border: 1px solid #dce3f0;
+    color: #172b22;
+    background: #f7faf7;
+    border: 1px solid #d9e3da;
     border-radius: 11px;
     outline: none;
     font: inherit;
@@ -102,20 +102,20 @@ input {
 }
 
 input::placeholder {
-    color: #a5afc1;
+    color: #a1afa4;
 }
 
 input:focus {
     background: #fff;
-    border-color: #5c78e8;
-    box-shadow: 0 0 0 4px rgba(92, 120, 232, 0.14);
+    border-color: #557b61;
+    box-shadow: 0 0 0 4px rgba(85, 123, 97, 0.14);
 }
 
 input:disabled {
     cursor: not-allowed;
-    color: #929db0;
-    background: #edf0f6;
-    border-color: #e0e5ee;
+    color: #929f95;
+    background: #edf1ed;
+    border-color: #dfe6df;
 }
 
 button {
@@ -128,10 +128,10 @@ button {
     margin-top: 25px;
     cursor: pointer;
     color: #fff;
-    background: linear-gradient(100deg, #526fe4, #3c59c8);
+    background: linear-gradient(100deg, #426b4e, #2f543b);
     border: 0;
     border-radius: 11px;
-    box-shadow: 0 10px 18px rgba(65, 89, 198, 0.22);
+    box-shadow: 0 10px 18px rgba(47, 84, 59, 0.20);
     font: inherit;
     font-size: 14px;
     font-weight: 700;
@@ -140,7 +140,7 @@ button {
 
 button:hover {
     filter: brightness(1.06);
-    box-shadow: 0 13px 22px rgba(65, 89, 198, 0.3);
+    box-shadow: 0 13px 22px rgba(47, 84, 59, 0.27);
     transform: translateY(-1px);
 }
 
@@ -151,8 +151,8 @@ button:active {
 button:disabled,
 button:disabled:hover {
     cursor: not-allowed;
-    color: #9aa6bb;
-    background: #dfe4ed;
+    color: #9aa69b;
+    background: #dfe6df;
     box-shadow: none;
     filter: none;
     transform: none;
@@ -172,9 +172,9 @@ button:disabled:hover {
     padding: 9px 12px;
     content: "Account locked - reset the DFA to try again";
     color: #fff;
-    background: #273653;
+    background: #273a2e;
     border-radius: 8px;
-    box-shadow: 0 8px 18px rgba(33, 50, 84, 0.2);
+    box-shadow: 0 8px 18px rgba(33, 50, 40, 0.2);
     font-size: 12px;
     font-weight: 600;
     opacity: 0;
@@ -198,8 +198,8 @@ button:disabled:hover {
     padding: 20px;
     margin-top: 28px;
     overflow-wrap: anywhere;
-    background: #f4f7fd;
-    border: 1px solid #e4eaf5;
+    background: #f3f7f3;
+    border: 1px solid #e0e9e0;
     border-radius: 15px;
 }
 
@@ -211,7 +211,7 @@ button:disabled:hover {
 
 .state h2 {
     margin-bottom: 14px;
-    color: #263653;
+    color: #304838;
     font-size: 15px;
 }
 
@@ -219,67 +219,67 @@ button:disabled:hover {
     width: 9px;
     height: 9px;
     margin-top: 4px;
-    background: #5c78e8;
+    background: #557b61;
     border-radius: 50%;
-    box-shadow: 0 0 0 5px rgba(92, 120, 232, 0.12);
+    box-shadow: 0 0 0 5px rgba(85, 123, 97, 0.12);
 }
 
 .state-success .state-dot {
-    background: #18a97f;
-    box-shadow: 0 0 0 5px rgba(24, 169, 127, 0.13);
+    background: #18865c;
+    box-shadow: 0 0 0 5px rgba(24, 134, 92, 0.13);
 }
 
 .state-locked .state-dot {
-    background: #e35b65;
-    box-shadow: 0 0 0 5px rgba(227, 91, 101, 0.13);
+    background: #c94d4d;
+    box-shadow: 0 0 0 5px rgba(201, 77, 77, 0.13);
 }
 
 .state-value {
     margin-bottom: 7px;
-    color: #3d5ed0;
+    color: #355e43;
     font-size: 22px;
     font-weight: 800;
     letter-spacing: 0.04em;
 }
 
 .state-success .state-value {
-    color: #148b6b;
+    color: #14734f;
 }
 
 .state-locked .state-value {
-    color: #d44f5a;
+    color: #bd4141;
 }
 
 .message {
     margin-bottom: 0;
-    color: #77839a;
+    color: #758579;
     font-size: 13px;
     line-height: 1.5;
 }
 
 .reset {
     margin-top: 12px;
-    color: #50617f;
+    color: #506958;
     background: transparent;
-    border: 1px solid #dbe3f0;
+    border: 1px solid #d6e1d7;
     box-shadow: none;
 }
 
 .reset:hover {
-    color: #33415e;
-    background: #f5f7fb;
+    color: #304838;
+    background: #f2f6f2;
     box-shadow: none;
 }
 
 .footer-note {
     margin: 22px 0 0;
-    color: #9aa6bb;
+    color: #98a79a;
     font-size: 11px;
     text-align: center;
 }
 
 .footer-note span {
-    color: #30b18c;
+    color: #32956b;
     font-size: 9px;
 }
 
